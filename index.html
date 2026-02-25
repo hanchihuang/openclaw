@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI新闻快报 · 2026年02月25日 12:01</title>
+    <title>赛博AI淘金 · 实时资讯</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
-            color: #fff;
+            color: #e94560;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
         }
-        .container { max-width: 800px; margin: 0 auto; }
         .header {
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             border-bottom: 2px solid #e94560;
             margin-bottom: 30px;
         }
         .header h1 {
-            font-size: 2em;
-            background: linear-gradient(45deg, #e94560, #ff6b6b, #feca57);
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #e94560, #ff6b6b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
-        .update-time {
+        .header .time {
             color: #888;
             font-size: 0.9em;
         }
-        .badge {
+        .update-badge {
             display: inline-block;
             background: #e94560;
             color: white;
@@ -45,130 +48,203 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
-        .section {
+        .card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 20px;
-            border: 1px solid rgba(233, 69, 96, 0.2);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .section-title {
-            font-size: 1.3em;
-            color: #e94560;
-            margin-bottom: 20px;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+        }
+        .card-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        .news-item {
-            background: rgba(255,255,255,0.03);
-            border-radius: 10px;
-            padding: 15px;
             margin-bottom: 15px;
-            border-left: 3px solid #e94560;
-            transition: transform 0.2s;
         }
-        .news-item:hover {
-            transform: translateX(5px);
-            background: rgba(255,255,255,0.05);
+        .card-icon {
+            font-size: 2em;
+            margin-right: 15px;
         }
-        .news-title {
-            font-size: 1.1em;
+        .card-title {
+            font-size: 1.3em;
             color: #fff;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .tag {
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+        .content {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background: rgba(233, 69, 96, 0.1);
+            border-left: 3px solid #e94560;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .link-btn {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
             text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
+            font-size: 0.9em;
+            transition: background 0.3s;
         }
-        .news-title:hover { color: #e94560; }
-        .news-meta {
-            color: #888;
-            font-size: 0.85em;
+        .link-btn:hover {
+            background: #ff6b6b;
         }
-        .heat { color: #feca57; }
         .footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 0;
             color: #666;
             font-size: 0.9em;
+        }
+        .money-tip {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05));
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .money-tip h4 {
+            color: #ffd700;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🔥 AI新闻快报</h1>
-            <div class="update-time">更新时间：2026年02月25日 12:01</div>
-            <span class="badge">⚡ 每6小时自动更新</span>
+            <h1>🤖 赛博AI淘金</h1>
+            <div class="time">实时资讯看板 · 2026-02-25 18:01:42</div>
+            <span class="update-badge">⚡ 每小时自动更新</span>
         </div>
 
-        <div class="section">
-            <div class="section-title">📰 HackerNews 热门</div>
 
-            <div class="news-item">
-                <a href="https://www.inceptionlabs.ai/blog/introducing-mercury-2" class="news-title" target="_blank">Mercury 2: The fastest reasoning LLM, powered by diffusion</a>
-                <div class="news-meta"><span class="heat">🔥 109 points</span> · ⏰ 5 hours ago</div>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🔥</span>
+                <h3 class="card-title">HackerNews AI热门讨论</h3>
             </div>
-
-            <div class="news-item">
-                <a href="https://vmfunc.re/blog/persona/" class="news-title" target="_blank">OpenAI, the US government and Persona built an identity surveillance machine</a>
-                <div class="news-meta"><span class="heat">🔥 488 points</span> · ⏰ 9 hours ago</div>
+            <div class="tags">
+                <span class="tag">社区热议</span>
+                <span class="tag">技术趋势</span>
             </div>
+            <div class="content">
+                <ul style="margin-left: 20px; color: #ccc; line-height: 2;">
 
-            <div class="news-item">
-                <a href="https://www.theguardian.com/us-news/2026/feb/24/anthropic-claude-military-ai" class="news-title" target="_blank">US Military leaders meet with Anthropic to argue against Claude safeguards</a>
-                <div class="news-meta"><span class="heat">🔥 79 points</span> · ⏰ 3 hours ago</div>
-            </div>
+<li><a href="" target="_blank" style="color: #e94560;">Common Lisp + Machine Learning Internship at Google (Mountain View, CA)</a> (45🔼)</li>
+<li><a href="" target="_blank" style="color: #e94560;">Ask HN: What's the pain using current AI algorithms?</a> (1🔼)</li>
+<li><a href="" target="_blank" style="color: #e94560;">MIT Non-AI License</a> (17🔼)</li>
 
-            <div class="news-item">
-                <a href="https://blog.cloudflare.com/vinext/" class="news-title" target="_blank">How we rebuilt Next.js with AI in one week</a>
-                <div class="news-meta"><span class="heat">🔥 403 points</span> · ⏰ 7 hours ago</div>
-            </div>
-
-            <div class="news-item">
-                <a href="https://www.cnbc.com/2026/02/20/openai-resets-spend-expectations-targets-around-600-billion-by-2030.html" class="news-title" target="_blank">OpenAI resets spending expectations, from $1.4T to $600B</a>
-                <div class="news-meta"><span class="heat">🔥 190 points</span> · ⏰ 9 hours ago</div>
-            </div>
-
-            <div class="news-item">
-                <a href="https://dreamrecorder.ai/" class="news-title" target="_blank">Dream Recorder AI – a portal to your subconscious</a>
-                <div class="news-meta"><span class="heat">🔥 15 points</span> · ⏰ 5 hours ago</div>
-            </div>
-
-            <div class="news-item">
-                <a href="https://ladybird.org/posts/adopting-rust/" class="news-title" target="_blank">Ladybird adopts Rust, with help from AI</a>
-                <div class="news-meta"><span class="heat">🔥 1251 points</span> · ⏰ 1 day ago</div>
-            </div>
-
-            <div class="news-item">
-                <a href="https://twitter.com/simonw/status/2025909963445707171" class="news-title" target="_blank">AI-generated replies are a scourge these days</a>
-                <div class="news-meta"><span class="heat">🔥 66 points</span> · ⏰ 18 hours ago</div>
+                </ul>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">🚀 GitHub Trending AI项目</div>
 
-            <div class="news-item">
-                <a href="https://github.com/OpenBB-finance/OpenBB" class="news-title" target="_blank">OpenBB-finance/OpenBB - Financial data platform for analysts, quants and AI agents.</a>
-                <div class="news-meta"><span class="heat">⭐ 61,942 stars</span></div>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🚀</span>
+                <h3 class="card-title">GitHub热门AI项目</h3>
+            </div>
+            <div class="tags">
+                <span class="tag">开源</span>
+                <span class="tag">GitHub Trending</span>
             </div>
 
-            <div class="news-item">
-                <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" class="news-title" target="_blank">x1xhlol/system-prompts-and-models-of-ai-tools - FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models</a>
-                <div class="news-meta"><span class="heat">⭐ 123,227 stars</span></div>
+
+            <div style="margin-bottom: 15px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                <strong style="color: #fff;">⭐ Portfolio</strong> <span style="color: #888;">(CSS · 0 stars)</span><br>
+                <p style="color: #aaa; margin-top: 5px;">⚡ Personal portfolio of Rudra Kumar Gupta — AI/ML Engineer & Full-Stack Developer. Built with React 18, CSS animations, and no UI libraries. Features projects, certifications, experience timeline & animated city footer.</p>
+                <a href="https://github.com/Rudra-Gupta15/Portfolio" target="_blank" style="color: #e94560; font-size: 0.9em;">查看项目 →</a>
             </div>
 
-            <div class="news-item">
-                <a href="https://github.com/ruvnet/ruvector" class="news-title" target="_blank">ruvnet/ruvector - RuVector is a high performance Vector Graph & Ai System built in Rust, focsused on agentic systems, and real time analytics. It combines HNSW search, dynamic minimum cut coherence, graph intelligence, and self learning memory into one unified engine for scalable, low latency reasoning and structured retrieval.</a>
-                <div class="news-meta"><span class="heat">⭐ 786 stars</span></div>
+
+            <div style="margin-bottom: 15px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                <strong style="color: #fff;">⭐ personax</strong> <span style="color: #888;">(TypeScript · 0 stars)</span><br>
+                <p style="color: #aaa; margin-top: 5px;">PersonaX — AI-powered personality analyzer and simulator that builds custom AI personas and enables intelligent conversations with them using advanced NLP.</p>
+                <a href="https://github.com/VikasCodesDev/personax" target="_blank" style="color: #e94560; font-size: 0.9em;">查看项目 →</a>
+            </div>
+
+</div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🔍</span>
+                <h3 class="card-title">AI掘金最新情报</h3>
+            </div>
+            <div class="tags">
+                <span class="tag">实时搜索</span>
+                <span class="tag">变现机会</span>
+            </div>
+
+
+            <div class="highlight" style="margin-bottom: 15px;">
+                <strong style="color: #fff;">普通人用ai赚钱的10个方法（2025最新版） - 知乎</strong>
+                <p style="color: #aaa; margin-top: 8px;">AI正在重塑就业市场，普通人也能借助AI工具低成本创业或增加副业收入。以下是已验证可行的10种赚钱方式，涵盖低门槛入门和高收益进阶方向。 文 / 大力财经 一、AI内容创作（适合新手） 1. AI自媒体写作（月入5000+…</p>
+            </div>
+
+
+            <div class="highlight" style="margin-bottom: 15px;">
+                <strong style="color: #fff;">人工智能 - 2025年，AI搞钱指南大公开!这10个野路子正在悄悄暴富 - 个人文章 - SegmentFault 思否</strong>
+                <p style="color: #aaa; margin-top: 8px;">更别说那些用AI写作工具批量产出爆文的内容工作室，或是靠AI数据分析接单的自由职业者了…… 这个世界正在狠狠奖励那些会用AI赚钱的普通人。 今天，我们就来扒一扒2025年最适合普通人的AI搞钱方法。</p>
+            </div>
+
+
+            <div class="highlight" style="margin-bottom: 15px;">
+                <strong style="color: #fff;">月入3万的ai副业攻略：从0到1入门的5个黄金赛道（附接单平台+避坑指南） - 知乎</strong>
+                <p style="color: #aaa; margin-top: 8px;">一、为什么说2025年是AI副业爆发元年？ 先看两组数据： - 中国信通院 《人工智能白皮书》显示，2024年国内AI相关产业规模突破5.2万亿元，年增长率达39%，催生超2000万新增岗位；</p>
+            </div>
+
+</div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">💡</span>
+                <h3 class="card-title">AI掘金Tips</h3>
+            </div>
+            <div class="tags">
+                <span class="tag">实操建议</span>
+                <span class="tag">赚钱思路</span>
+            </div>
+            <div class="money-tip">
+                <h4>🎯 本周重点关注</h4>
+                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+                    <li><strong>AI视频生成</strong>：Pika、Runway、HeyGen 竞争白热化，关注新功能发布窗口期</li>
+                    <li><strong>AI编程助手</strong>：Cursor 融资 1.05 亿美元，插件生态是下一个爆发点</li>
+                    <li><strong>AI Agent</strong>：Manus 爆火证明市场饥渴，垂直场景 Agent 有机会</li>
+                    <li><strong>AI数字人</strong>：短视频平台算法开始推AI内容，流量红利期</li>
+                </ul>
+            </div>
+            <div style="margin-top: 15px; padding: 15px; background: rgba(233, 69, 96, 0.1); border-radius: 8px;">
+                <strong style="color: #e94560;">💰 变现公式：</strong><br>
+                <span style="color: #ccc;">新工具首发(流量) + 教程/模板(产品) + 社群/课程(转化) = 持续收入</span>
             </div>
         </div>
 
         <div class="footer">
-            <p>💡 掘金提示：关注热门项目的早期趋势，第一时间跟进可获得流量红利</p>
-            <p>🔄 数据来源：HackerNews + GitHub Trending</p>
-            <p>🤖 自动更新：每6小时</p>
+            <p>本页面由AI自动生成 · 每小时更新</p>
+            <p>数据来源：GitHub Trending / Hacker News / Product Hunt / AI社区</p>
+            <p>💎 关注本仓库获取最新AI掘金情报</p>
         </div>
     </div>
 </body>
